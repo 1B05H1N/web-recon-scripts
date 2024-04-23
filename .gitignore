@@ -1,0 +1,13 @@
+# ignore specific file types
+
+*.csv
+*.txt
+
+!requirements.txt
+
+# ignore specific directories
+/output
+/input
+
+# source your own lists please
+/lists
