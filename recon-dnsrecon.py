@@ -64,7 +64,7 @@ def process_domains(domains, output_dir, dictionary_path):
     """Process a list of domains to enumerate subdomains and gather info."""
     for domain in domains:
         subdomains = enumerate_subdomains(domain, dictionary_path)
-        subdomains_file = output_dir / f"{sanitize_filename(domain)}_subdomains.csv"
+        subdomains_file = output_dir / f"{sanitize_filename(domain)}_subdomains{datetime.now().strftime('%Y%m%d%H%M%S')}.csv"
         subdomain_info = ", ".join(subdomains)
         subdomains_file.write_text(subdomain_info, encoding='utf-8')
         print(f"Subdomains for {domain} saved to: {subdomains_file}")
